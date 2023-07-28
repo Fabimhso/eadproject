@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tomorrow Treinamentos - Loja</title>
+
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+  <div id="overlay" class="loja-overlay"></div>
+  <%- include('includes/header') %>
+  <section class="treinamentos">
+    <div class="container">
+      <% for (let i = 0; i < categorias.length; i++) { %>
+        <div class="category">
+          <div class="category-title">
+            <h2><%= categorias[i].nome %></h2>
+          </div><!-- category-title -->
+          <% for (let j = 0; j < cursos.length; j++) { %>
+            <% if (cursos[j].curso.categoria_id == categorias[i].id) { %>
+              <div class="treinamento w33 left">
+                <div class="wrapper">
+                  <div class="image"></div><!-- image -->
+                  <div class="name">Treinamento <br><%= cursos[j].curso.nome %></div><!-- name -->
+                  <div class="description">
+                    <p><%= cursos[j].curso.descricao %></p>
+                  </div><!-- description -->
+                  <div class="price" data-modal="<%= cursos[j].link %>">
+                    <a class="button" style="cursor: pointer">
+                      <p>Conhecer Treinamento</p>
+                    </a><!-- button -->
+                  </div><!-- price -->
+                </div><!-- wrapper -->
+              </div><!-- treinamento -->
+              <div class="treinamento-modal" id="<%= cursos[j].link %>">
+                <div class="close right"><i class="far fa-times"></i></div>
+                <div class="info left">
+                  <div class="image left"></div>
+                  <div class="texto left">
+                    <h2>Treinamento <%= cursos[j].curso.nome %></h2>
+                    <p><%= cursos[j].curso.descricao %></p>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="sobre">
+                  <h2>Sobre o treinamento</h2>
+                  <div class="box w33 left">
+                    <div class="wrapper">
+                      <p>35 Módulos</p>
+                    </div>
+                  </div>
+                  <div class="box w33 left">
+                    <div class="wrapper">
+                      <p>273 Aulas</p>
+                    </div>
+                  </div>
+                  <div class="box w33 left">
+                    <div class="wrapper">
+                      <p>17 Projetos</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="capturas">
+                  <h2>Capturas de Tela</h2>
+                  <div class="prints">
+                    <div class="<%= cursos[j].link %> screenshot blue"></div>
+                    <div class="<%= cursos[j].link %> screenshot yellow"></div>
+                    <div class="<%= cursos[j].link %> screenshot red"></div>
+                    <div class="bullets"></div>
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="valor">
+                  <h2>De <span style="text-decoration: line-through;">R$ <%= parseFloat(cursos[j].curso.valor_ant).toFixed(2) %></span> por <strong>R$ <%= cursos[j].curso.valor %></strong></h2>
+                  <div class="button">
+                    <a href="#">adquirir treinamento</a>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+              <% } %>
+              <div class="clear"></div>
+          </div><!-- category-->
+      <% } %>
+      <div class="clear"></div><!-- clear -->
+    </div><!-- container -->
+  </section><!-- loja -->
+  <%- include('includes/footer') %>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../public/scripts/fontawesome.js"></script>
+  <script src="../public/scripts/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tomorrow Treinamentos - Cadastrar-se</title>
+
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+  <%- include('includes/header') %>
+    <h2>Criar conta</h2>
+    <form method="post">
+      <input type="text" name="userNameSU" placeholder="userNameSU" required>
+      <input type="email" name="userEmailSU" placeholder="userEmailSU" required>
+      <input type="password" name="userPasswdSU" placeholder="userPasswdSU" required>
+      <input type="text" name="userCPFSU" placeholder="userCPFSU">
+      <input type="submit" name="SignUp" value="Criar Conta">
+    </form>
+    
+    <% if (error) { %>
+      <% if (type === 'noname') { %>
+        <p>Erro: "Nome" não foi passado no formulário.</p>
+      <% } else if (type === 'noemail') { %>
+        <p>Erro: "Email" não foi passado no formulário.</p>
+      <% } else if (type === 'nopasswd') { %>
+        <p>Erro: "Senha" não foi passado no formulário.</p>
+      <% } else if (type === 'useralreadyexists') { %>
+        <p>Erro: Usuário já existe</p>
+      <% } else if (type === 'unknowerror') { %>
+        <p>Erro desconhecido. Tente novamente mais tarde.</p>  
+      <% } %>
+      <script src="../public/scripts/error.js"></script>
+    <% } %>
+  <%- include('includes/footer') %>
+</body>
+</html>

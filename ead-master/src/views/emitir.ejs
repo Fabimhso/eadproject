@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tomorrow Treinamentos</title>
+
+   <link rel="stylesheet" href="../../public/css/style.css">
+</head>
+<body>
+	<%- include("includes/header") %> 
+	<section class="treinamentos">
+		<div class="container">
+			<% for (var i = 0; i < _cursos.length; i++) { %>
+				<div class="treinamento w33 left">
+          <div class="wrapper">
+            <div class="image"></div><!-- image -->
+            <div class="name">Treinamento <br><%= _cursos[i]._curso.nome %></div><!-- name -->
+            <div class="actions">
+            	<p class="aulas-assistidas"><%= _cursos[i]._assistidas %>/<%= _cursos[i]._total %> Aulas Assitidas</p>
+              <button class="ctf-button enable">
+                <a href="/biblioteca/emitir/<%= _cursos[i]._curso.slug %>">Emitir Certificado</a>
+              </button><!-- ctf-button -->
+            </div><!-- actions -->
+          </div><!-- wrapper -->
+        </div><!-- treinamento -->
+			<% } %>
+			<div class="clear"></div>
+		</div><!-- container -->
+  </section><!-- treinamento -->
+	<%- include("includes/footer") %> 
+</body>
+</html>

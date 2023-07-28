@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tomorrow Treinamentos - biblioteca</title>
+
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body> 
+  <%- include('includes/header') %>
+  <section class="treinamentos">
+    <div class="container">
+      <% if (_cursos.length > 0) { %>
+        <% for (let i = 0; i < _cursos.length; i++) { %>
+          <div class="treinamento w33 left">
+            <div class="wrapper">
+              <div class="image"></div><!-- image -->
+              <div class="name">Treinamento <br><%= _cursos[i]._curso.nome %></div><!-- name -->
+              <div class="actions">
+                <% if (_cursos[i]._total != 0) { %>
+                  <div class="porcentagem">
+                    <div class="fill" style="width: <%= _cursos[i]._porcentagem %>%">
+                      <span><%= _cursos[i]._porcentagem %>%</span>
+                    </div><!-- fill -->
+                  </div><!-- porcentagem -->
+                  <p class="aulas-assistidas"><%= _cursos[i]._assistidas %>/<%= _cursos[i]._total %> Aulas Assitidas</p>
+                  <a href="/biblioteca/<%= _cursos[i]._link %>" class="button">
+                    <p>Assistir as Aulas</p>
+                  </a><!-- button -->
+                <% } else { %>
+                  <div class="porcentagem">
+                    <div class="fill" style="width: 0%">
+                      <span>-</span>
+                    </div><!-- fill -->
+                  </div><!-- porcentagem -->
+                  <p class="aulas-assistidas">Aulas em Gravação</p>
+                    <a href="javascript:void();" class="button disabled">
+                      <p>Assistir as Aulas</p>
+                    </a><!-- button -->
+                <% } %>
+                <br>
+                <% if (_cursos[i]._emissao) { %>
+                  <button class="ctf-button enable">
+                    <a href="emitir/<%= _cursos[i]._curso.slug %>">Emitir Certificado</a>
+                  </button><!-- ctf-button -->
+                <% } %>
+              </div><!-- actions -->
+            </div><!-- wrapper -->
+          </div><!-- treinamento -->
+          <% } %>
+        <% } else { %>
+          <div class="error">
+          <h2> (︶︹︺) </h2>  
+          <h4>Ops... parece que você ainda não adquiriu nenhum treinamento. Acesse a nossa loja, ou clique <a href="/loja">aqui</a>!</h4>
+          </div><!-- error -->
+        <% } %>
+      <div class="clear"></div>
+    </div><!-- container -->
+  </section><!-- treinamentos -->
+  <%- include('includes/footer') %>
+</body>
+</html>

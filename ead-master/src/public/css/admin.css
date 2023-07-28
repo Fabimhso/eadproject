@@ -1,0 +1,320 @@
+@import './global.css';
+
+body {
+  background: #1A91DA;
+  width: 100%;
+  height: 100%;
+}
+
+body.painel { background: #e4e4e4; }
+
+.box-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 25px 15px;
+  box-shadow: 5px 5px #13689c;
+  width: 350px;
+}
+
+.box-login h2 {
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.box-login form .input-box {
+  margin: 10px 0;
+  position: relative;
+}
+
+.box-login form .input-box span {
+  position: absolute;
+  top: 26px;
+  right: 8px;
+  cursor: pointer;
+  padding: 5px 8px;
+}
+
+.box-login form .input-box input[type="text"],
+.box-login form .input-box input[type="password"] {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #0E517A;
+  padding: 0 10px;
+}
+
+.box-login form .input-box input[type="submit"] {
+  width: 50%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 10px 15px;
+  background: #1A91DA;
+  color: #fff;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.box-login .aluno { margin-top: 15px; }
+.box-login .aluno a { color: #1A91DA; }
+
+/* Home */
+aside {
+  overflow-y: auto;
+  height: 100%;
+  background: #607d8b;
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+aside h2.title {
+  text-align: center;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 15px 15px 0 15px;
+  font-size: 28px;
+}
+
+aside h4.subtitle {
+  text-align: center;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+aside .menu h2 {
+  background-color: #37474f;
+  display: block;
+  padding: 0 10px;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+aside .menu a { 
+  display: block; 
+  padding: 4px 10px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #ffffff;
+  border-bottom: 2px solid #37474f;
+}
+
+header {
+  position: relative;
+  left: 300px;
+  background-color: #78909c;
+  width: calc(100% - 300px);
+}
+
+header .buttons { margin-right: 20px; }
+
+header .buttons a {
+  transition: .4s;
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 5px 20px 6px 20px;
+}
+
+header .buttons a:hover { background-color: #6a7f8a; }
+
+main {
+  width: calc(100% - 300px);
+  position: relative;
+  left: 300px;
+  padding: 0 10px;
+}
+
+main .box-content {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+main .box-content h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+main .box-content .metrica {
+  padding: 5px;
+  display: inline-block;
+}
+
+main .box-content .metrica .wrapper {
+  background-color: #1A91DA;
+  padding: 8px;
+  color: #ffffff;
+}
+
+main .box-content .metrica .wrapper h4 { font-weight: 400; font-size: 22px; }
+main .box-content .metrica .wrapper p { font-size: 22px; }
+
+main .box-content form {
+  margin: 15px 0;
+}
+
+main .box-content form label {
+  font-size: 19px;
+  font-weight: 400;
+  color: #444;
+  display: block;
+}
+
+main .box-content form .input-box {
+  margin: 10px 0;
+}
+
+main .box-content form input[type=text],
+main .box-content form input[type=password] {
+  margin-top: 3px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  border: 2px solid #ccc;
+}
+
+main .box-content form input[type=file] {
+  margin-top: 8px;
+  display: none;
+}
+
+main .box-content form .input-box textarea {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+main .box-content form label#image-label {
+  width: 200px;
+  height: 55px;
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: .25s;
+  border: 1px solid #333;
+  font-size: 17px;
+}
+
+main .box-content form label#image-label:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+main .box-content form input[type=submit] {
+  width: 200px;
+  height: 55px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #66bb6a;
+  color: #f5f5f5;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .25s;
+  border: 1px solid #66bb6a;
+}
+
+main .box-content form input[type=submit]:hover {
+  color: #66bb6a;
+  background-color: #fff;
+}
+
+main .box-content form select {
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+}
+
+main .box-content form select option {
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+  width: 100%;
+  height: 50px;
+}
+
+main .box-content table {
+  margin: 10px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+main .box-content table tr:nth-of-type(1){
+  background-color: #4db6ac;
+  color: #fff;
+  font-weight: bold;
+}
+
+main .box-content table tr {
+  color: #444;
+  border-bottom: 1px solid #ccc;
+}
+
+main .box-content table td {
+  padding: 8px;
+}
+
+main .box-content table td img {
+  width: 80px;
+}
+
+main .box-content a.btn {
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  transition: .2s;
+}
+
+main .box-content a.btn-delete {
+  background-color: #ff7043;
+}
+
+main .box-content a.btn-edit {
+  background-color: #66bb6a;
+}
+
+main .box-content a.btn-arrow {
+  background-color: #29b6f6;
+}
+
+main .box-content a.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+main .box-content a.btn-edit:hover {
+  background-color: #43a047;
+}
+
+main .box-content a.btn-arrow:hover {
+  background-color: #0288d1;
+}

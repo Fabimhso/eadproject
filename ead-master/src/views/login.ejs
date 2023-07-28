@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tomorrow Treinamentos - Login</title>
+
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+  <%- include('includes/header') %>
+    <h2>Entrar em sua conta</h2>
+    <form method="post">
+      <input type="email" name="userEmailSI" required>
+      <input type="password" name="userPasswdSI" required>
+      <input type="submit" name="SignIn" value="Fazer Login">
+    </form>
+
+    <div class="admin">
+      <a href="/admin/">Entrar como Instrutor</a>
+    </div>
+
+    <% if (error) { %>
+      <% if (type === 'usernotfound') { %>
+        <p>Erro: Usuário não encontrado.</p>
+      <% } else if (type === 'connectiontimedout') { %>
+        <p>Erro: A conexão expirou.</p>
+      <% } else if (type === 'unknownerror') { %>
+        <p>Erro: Erro desconhecido.</p>
+      <% } %>
+      <script src="../public/scripts/error.js"></script>
+    <% } %>
+  <%- include('includes/footer') %>
+</body>
+</html>

@@ -1,0 +1,732 @@
+@import "./global.css";
+@import "./media.css";
+
+.red { background: red; }
+.blue { background: blue; }
+.yellow { background: yellow; }
+
+/* Includes */
+header {
+  background: #1A91DA;
+  padding: 20px 15px;
+}
+
+header .logo h2 {
+  font-size: 36px;
+  font-weight: 400;
+  color: #fff;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 11px 10px;
+}
+
+header ul li .button1 {
+  border: 1px solid #fff;
+  padding: 4px 10px;
+}
+
+header ul li .button2 {
+  border: 1px solid #fff;
+  background: #fff;
+  padding: 4px 10px;
+}
+
+header .mobile {
+  display: none;
+  margin: 10px;
+}
+
+header .mobile i {
+  cursor: pointer;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+header .mobile ul {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #126DA5;
+  width: 40%;
+  height: 100%;
+  padding: 10px 15px 0 5px;
+  z-index: 99999;
+}
+
+header .mobile ul li {
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+}
+
+header .mobile a { 
+  display: block; 
+  transition: .4s; 
+  border-radius: 15px; 
+  padding: 8px 10px; 
+  font-size: 24px; 
+}
+header .mobile a:hover { 
+  background-color: #127dc0; 
+}
+
+header ul li .button2 a { 
+  color: #1A91DA;
+}
+
+header ul li span.name {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+header ul li .showmenu {
+  margin-left: 10px;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  transition: .3s;
+}
+
+header ul li .showmenu:hover {
+  background-color: #e2f4ffed;
+}
+
+header ul li .showmenu i {
+  font-size: 18px;
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+header ul li .sub-menu {
+  z-index: 99;
+  padding: 10px;
+  display: none;
+  position: absolute;
+  background-color: #126DA5;
+  margin-left: -10px;
+  border-radius: 0 0 15px 15px;
+}
+
+header ul li .sub-menu ul a { 
+  padding: 8px 10px; 
+  display: block; 
+  transition: .4s; 
+  border-radius: 15px; 
+}
+header ul li .sub-menu ul a:hover { 
+  background-color: #127dc0; 
+}
+
+footer.first {
+  padding: 50px 0;
+  background: #126DA5;
+}
+
+footer.first .container {
+  max-width: 1280px;
+}
+
+footer.first .w50 {
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: justify;
+  color: #fff;
+}
+
+footer.first h2 {
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+footer.first p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+footer.final {
+  text-align: center;
+  background: #1A91DA;
+  padding: 20px 0;
+}
+
+footer.final a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Página Principal */
+section.banner {
+  width: 100%;
+  height: 600px;
+  background-image: url('../images/banner1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 70px 0 20px 0;
+  text-align: center;
+}
+
+section.banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #072030d8;
+}
+
+section.banner .title h2 {
+  position: relative;
+  z-index: 999;
+  color: #fff;
+  font-size: 72px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+section.banner .pros {
+  margin-top: 70px;
+}
+
+section.banner .pros p {
+  font-family: 'Fira Code', monospace;
+  position: relative;
+  z-index: 999;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 7px 0;
+}
+
+section.technologies {
+  padding: 20px 0;
+  border-bottom: 2px solid #000;
+}
+
+section.technologies .space {
+  width: 100%;
+  padding: 10px;
+}
+
+section.technologies .technology {
+  width: 19%;
+  display: inline-block;
+  text-align: center;
+  margin: 10px 0;
+}
+
+section.technologies .technology .image {
+  width: 160px;
+  height: 160px;
+  background: #c4c4c4;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+section.technologies .technology .title {
+  font-family: 'Fira Code', monospace;
+  font-size: 20px;
+}
+
+section.technologies .technology .samples {
+  font-family: 'Fira Code', monospace;
+  color: #0E517A;
+  font-size: 17px;
+}
+
+section.company {
+  padding: 20px 0;
+}
+
+section.company .title h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+section.company .member {
+  display: inline-block;
+  padding: 0 25px;
+}
+
+section.company .member .wrapper {
+  border: 1px solid #000;
+  min-height: 715px;
+}
+
+section.company .member .image {
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+}
+
+section.company .member .info {
+  padding: 10px 30px;
+}
+
+section.company .member .info h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+section.company .member ul {
+  list-style: inside;
+}
+
+section.company .member li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+section.treinamentos {
+  padding: 20px 0;
+}
+
+section.treinamentos .title {
+  background: #1A91DA;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+}
+
+section.treinamentos .title h2 {
+  font-size: 44px;
+  font-weight: 400;
+}
+
+section.treinamentos .title h4 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+section.treinamentos .category {
+  padding: 25px 0;
+}
+
+section.treinamentos .category-title {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+section.treinamentos .category-title h2 {
+  font-size: 36px;
+  font-weight: 400;
+  padding-right: 10px;
+}
+
+section.treinamentos .category-title h4 {
+  font-family: 'Fira Code', monospace;
+  font-size: 20px;
+  font-weight: 400;
+  color: #0E517A;
+  margin-top: 20px;
+}
+
+section.treinamentos .treinamento {
+  display: inline-block;
+  padding: 0 35px;
+  margin: 30px 0;
+}
+
+section.treinamentos .treinamento .wrapper {
+  border: 1px solid #000;
+  min-height: 580px;
+}
+
+section.treinamentos .treinamento .image {
+  width: 100%;
+  height: 250px;
+  background-color: #2b2b2b;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+section.treinamentos .treinamento .name {
+  text-align: center;
+  padding: 8px 0;
+  font-size: 24px;
+}
+
+section.treinamentos .treinamento .description {
+  padding: 0 30px;
+  line-height: 20px;
+}
+
+section.treinamentos .treinamento .description p {
+  font-size: 17px;
+  text-align: justify;
+}
+
+section.treinamentos .treinamento .price {
+  padding: 8px 0;
+  text-align: center;
+}
+
+section.treinamentos .treinamento .price span {
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+section.treinamentos .treinamento .price a.button {
+  padding: 10px 12px;
+  text-decoration: none;
+  background: #1A91DA; 
+  display: inline-block;
+  margin: 10px auto;
+}
+
+section.treinamentos .treinamento .price a.button p {
+  color: #fff;
+  font-size: 20px;
+}
+
+section.treinamentos .treinamento .actions a.button {
+  padding: 10px 12px;
+  text-decoration: none;
+  background: #1A91DA; 
+  display: inline-block;
+  margin: 20px auto 10px auto;
+}
+
+section.treinamentos .treinamento .actions a.button.disabled {
+  background: #4ca2d8;
+}
+
+section.treinamentos .treinamento .actions a.button.disabled p {
+  color: #ffffff;
+}
+
+section.treinamentos .treinamento .actions {
+  text-align: center;
+}
+
+section.treinamentos .treinamento .actions a.button p {
+  color: #fff;
+  font-size: 20px;
+}
+
+section.treinamentos .treinamento .actions .porcentagem {
+  width: 80%;
+  max-width: 300px;
+  position: relative;
+  height: 30px;
+  margin: 8px auto;
+  display: block;
+  text-align: center;
+  background: #093149;
+  border: 3px solid #0E517A;
+  color: #ffffff;
+}
+
+section.treinamentos .treinamento .actions .porcentagem .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #1A91DA;
+}
+
+section.treinamentos .treinamento .actions .porcentagem .fill span {
+  color: #ffff;
+  font-size: 18px;
+  position: absolute;
+  left: 10px;
+}
+
+section.treinamentos .treinamento .actions .aulas-assistidas {
+  font-size: 20px;
+}
+
+section.treinamentos .treinamento .actions .ctf-button {
+  background: #fff; 
+  display: inline-block;
+  margin: 10px auto;
+  outline: 3px solid #1A91DA;
+}
+
+section.treinamentos .treinamento .actions .ctf-button a {
+  color: #1A91DA;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 15px;
+}
+
+.loja-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #072030de;
+  display: none;
+  display: 999;
+}
+
+section.treinamentos .treinamento-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  z-index: 999;
+  display: none;
+  background-color: #ffffff;
+  padding: 30px;
+  width: 90%;
+  height: 90%;
+  max-width: 1280px;
+  max-height: 1080px;
+  overflow-y: auto;
+}
+
+section.treinamentos .treinamento-modal:first-child {
+  display: block !important;
+}
+
+section.treinamentos .treinamento-modal .close {
+  margin: 10px;
+}
+
+section.treinamentos .treinamento-modal .close i,
+section.treinamentos .treinamento-modal .close svg {
+  font-size: 28px;
+  color: #2b2b2b;
+  cursor: pointer;
+}
+
+section.treinamentos .treinamento-modal .image {
+  width: 380px;
+  height: 250px;
+  background-color: #2b2b2b;
+  background-size: 100% 100%;
+  background-position: center;
+  margin-right: 20px;
+}
+
+
+section.treinamentos .treinamento-modal h2 {
+  font-size: 32px;
+  font-weight: 400;
+  color: #2b2b2b;
+}
+
+section.treinamentos .treinamento-modal .info p {
+  font-size: 18px;
+  color: #2b2b2b;
+  text-align: justify;
+  width: 100%;
+  max-width: 750px;
+}
+
+section.treinamentos .treinamento-modal .info .texto {
+  padding: 15px 20px;
+}
+
+section.treinamentos .treinamento-modal .box {
+  padding: 20px 30px;
+}
+
+section.treinamentos .treinamento-modal .box .wrapper {
+  background: #1a91da;
+  text-align: center;
+  padding: 15px 20px;
+}
+
+section.treinamentos .treinamento-modal .box .wrapper p {
+  color: #fff;
+  font-size: 26px;
+}
+
+section.treinamentos .treinamento-modal .sobre h2,
+section.treinamentos .treinamento-modal .capturas h2 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+section.treinamentos .treinamento-modal .capturas {
+  padding: 0 35px;
+  position: relative;
+}
+
+section.treinamentos .treinamento-modal .capturas .prints {
+  position: relative;
+}
+
+section.treinamentos .treinamento-modal .capturas .screenshot {
+  width: 100%;
+  max-width: 1920px;
+  height: 640px;
+  position: absolute;
+  left: 0;  
+  top: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+}
+
+section.treinamentos .treinamento-modal .capturas .bullets {
+  position: absolute;
+  top: 610px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+section.treinamentos .treinamento-modal .capturas .bullets span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #2b2b2b;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+section.treinamentos .treinamento-modal .capturas .bullets .active-slide {
+  background-color: #eaeaea !important;
+}
+
+section.treinamentos .treinamento-modal .valor {
+  position: relative;
+  top: 640px;
+}
+
+section.treinamentos .treinamento-modal .valor h2 {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 42px;
+}
+
+section.treinamentos .treinamento-modal .valor .button {
+  display: block;
+  margin: 10px auto 0 auto;
+  width: 385px;
+}
+
+section.treinamentos .treinamento-modal .valor a {
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  padding: 15px 20px;
+  background: #1a91da;
+}
+
+section.treinamento {
+  padding: 20px 0;
+}
+
+.error {
+  text-align: center;
+  color: #0E517A;
+}
+
+.error h2 {
+  font-size: 36px;
+}
+
+.error h4 {
+  width: 650px;
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0 auto;
+}
+
+.error h4 a {
+  color: #093149;
+}
+
+section.contato {
+  padding: 40px;
+}
+
+section.contato .container {
+  max-width: 1080px;
+}
+
+section.contato .form-box {
+  width: 100%;
+  height: 100%;
+  background-color: #1A91DA;
+  padding: 30px 40px;
+}
+
+section.contato h2.title {
+  text-align: center;
+  font-size: 28px;
+  color: #ffff;
+  font-weight: 400;
+}
+
+section.contato h3.title {
+  text-align: center;
+  font-size: 22px;
+  color: #ffff;
+  font-weight: 400;
+}
+
+section.contato form .input-box {
+  margin-top: 10px;
+}
+
+section.contato form label {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+section.contato form input[type="text"],
+section.contato form input[type="email"],
+section.contato form input[type="tel"] {
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  font-size: 18px;
+  border: 2px solid #0E517A;
+}
+
+section.contato form textarea {
+  width: 100%;
+  height: 220px;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #0E517A;
+}
+
+section.contato form .input-box#centered-button {
+  width: 300px;
+  height: 50px;
+  margin: 10px auto 0 auto;
+}
+
+section.contato form input[type="submit"] {
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #0E517A;
+}

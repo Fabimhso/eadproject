@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tomorrow Treinamentos - Home</title>
+
+  <link rel="stylesheet" href="../public/css/style.css">
+</head>
+<body>
+  <%- include("includes/header") %>
+  <section class="banner">
+    <div class="overlay"></div><!-- overlay -->
+    <div class="container">
+      <div class="title">
+        <h2>pensamos em você</h2>
+        <h2>e no seu futuro</h2>
+      </div><!-- titile -->
+      <div class="pros">
+        <p>this.Qualidade();</p>
+        <p>this.MelhoresTreinamentos();</p>
+        <p>this.MelhoresInstrutores();</p>
+        <p>this.MelhoresPreços();</p>
+      </div><!-- pros -->
+    </div><!-- container -->
+  </section><!-- banner -->
+  <section class="technologies">
+    <div class="container">
+      <% for( let i = 0; i < tecnologias.length; i++ ) { %>
+      <div class="technology">
+        <div class="image"></div><!-- image -->
+        <div class="title"><%= tecnologias[i].nome %></div><!-- title -->
+        <div class="samples">(<%= tecnologias[i].exemplos %>)</div><!-- samples -->
+      </div><!-- technology -->
+      <% } %>
+    </div><!-- container -->
+    <div class="clear"></div><!-- clear -->
+  </section><!-- technologies -->
+  <section class="company">
+    <div class="container">
+      <div class="title">
+        <h2>Quem faz a Tomorrow Treinamentos acontecer:</h2>
+      </div><!-- title -->
+      <div class="member w33 left">
+        <div class="wrapper">
+          <div class="image" style="background-image: url('../public/images/vinicius.jpg');"></div><!-- image -->
+          <div class="info">
+            <h2>CEO</h2>
+            <h2>Vinícius Trindade</h2>
+            <ul>
+              <li>Co-Fundador da Plataforma</li>
+              <li>Principal Instrutor dos Treinamentos de Programação em Geral</li>
+              <li>Responsável pelo Plano de Ação Geral da Plataforma</li>
+              <li>Responsável pelo Desenvolvimento da Plataforma</li>
+            </ul>
+          </div><!-- info -->
+        </div><!-- wrapper -->
+      </div><!-- member w33 left -->
+      <div class="member w33 left">
+        <div class="wrapper">
+          <div class="image" style="background-image: url('../public/images/fabiano.png');"></div><!-- image -->
+          <div class="info">
+            <h2>CPO & CMO</h2>
+            <h2>Fabiano Henrique</h2>
+            <ul>
+              <li>Co-Fundador</li>
+              <li>Principal Instrutor dos Treinamentos de Marketing Digital, Trade e E-Commerce</li>
+              <li>Responsável pelo Tráfego e Marketing da Plataforma</li>
+            </ul>
+          </div><!-- info -->
+        </div><!-- wrapper -->
+      </div><!-- member w33 left -->
+      <div class="member w33 left">
+        <div class="wrapper">
+          <div class="image" style="background-image: url('../public/images/danilo.png');"></div><!-- image -->
+          <div class="info">
+            <h2>CFO</h2>
+            <h2>Danilo Ramos</h2>
+            <ul>
+              <li>Responsável pelas Finanças, e Estratégias da Plataforma</li>
+              <li>Principal Instrutor dos Treinamentos de Renda Extra</li>
+              <li>Responsável pela Arte da Plataforma</li>
+            </ul>
+          </div><!-- info -->
+        </div><!-- wrapper -->
+      </div><!-- member w33 left -->
+    </div><!-- container -->
+    <div class="clear"></div><!-- clear -->
+  </section><!-- company -->
+  <section class="treinamentos">
+    <div class="title">
+      <h2>Confira Nossos Treinamentos:</h2>
+      <h4>Treinamentos completos pelos melhores preços</h4>
+    </div>
+    <div class="container">
+      <% for (let i = 0; i < categorias.length; i++) { %>
+        <div class="category">
+          <div class="category-title">
+            <h2><%= categorias[i].nome %></h2>
+          </div><!-- category-title -->
+          <% for (let j = 0; j < cursos.length; j++) { %>
+            <% if (cursos[j].curso.categoria_id == categorias[i].id) { %>
+              <div class="treinamento w33 left">
+                <div class="wrapper">
+                  <div class="image"></div><!-- image -->
+                  <div class="name">Treinamento <br><%= cursos[j].curso.titulo %></div><!-- name -->
+                  <div class="description">
+                    <p><%= cursos[j].curso.descricao %></p>
+                  </div><!-- description -->
+                  <div class="price" data-modal="<%= cursos[j].link %>">
+                    <a href="/loja" class="button">
+                      <p>Conhecer Treinamento</p>
+                    </a><!-- button -->
+                  </div><!-- price -->
+                </div><!-- wrapper -->
+              </div><!-- treinamento -->
+              <% } %>
+              <% } %>
+              <div class="clear"></div>
+          </div><!-- category-->
+      <% } %>
+      <div class="clear"></div><!-- clear -->
+    </div><!-- container -->
+  </section><!-- treinamentos-->
+  <%- include("includes/footer") %>
+</body>
+</html>

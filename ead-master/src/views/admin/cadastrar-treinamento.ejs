@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Controle - Cadastrar Treinamento</title>
+
+  <link rel="stylesheet" href="../../public/css/admin.css">
+</head>
+<body class="painel">
+  <%- include("includes/aside") %> 
+  <%- include("includes/header") %>
+  <main>
+    <div class="content">
+      <div class="box-content w100">
+        <h2>Cadastrar Treinamento</h2>
+        <form method="post" enctype="multipart/form-data">
+          <div class="input-box">
+            <label for="nome">Nome do Treinamento</label>
+            <input type="text" name="treinamentoNome" required>
+          </div><!-- input-box -->
+          <div class="input-box">
+            <label for="nome">Descrição do Treinamento</label>
+            <textarea type="text" name="treinamentoDescricao" required></textarea>
+          </div><!-- input-box -->
+          <div class="input-box">
+            <label for="nome">Valor do Treinamento</label>
+            <input type="text" name="treinamentoValor" required>
+          </div><!-- input-box -->
+          <div class="input-box left">
+            <label id="image-label" for="image">Imagem</label>
+            <input type="file" id="image" name="treinamentoImagem" required>
+          </div><!-- input-box -->
+          <div class="input-box right">
+            <input type="submit" name="cadastrar" value="Cadastrar">
+          </div>
+          <div class="clear"></div><!-- clear -->
+        </form>
+      </div><!-- box-content w100 -->
+    </div><!-- content -->
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../../public/scripts/scripts.js"></script>
+</body>
+</html>

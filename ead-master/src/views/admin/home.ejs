@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TT - Painel de Controle - Home</title>
+
+  <link rel="stylesheet" href="../../public/css/admin.css">
+</head>
+<body class="painel">
+  <%- include("includes/aside") %> 
+  <%- include("includes/header") %>
+  <main>
+    <div class="content">
+      <div class="box-content w100">
+        <h2>Métricas da Plataforma</h2>
+        <div class="metrica w33">
+          <div class="wrapper">
+            <h4>Alunos Cadastrados</h4>
+            <p><%= alunos %> </p>
+          </div><!-- wrapper -->
+        </div><!-- metrica -->
+        <div class="metrica w33">
+          <div class="wrapper">
+            <h4>Instrutores Cadastrados</h4>
+            <p><%= instrutores %> </p>
+          </div><!-- wrapper -->
+        </div><!-- metrica -->
+        <div class="metrica w33">
+          <div class="wrapper">
+            <h4>Treinamentos Cadastrados</h4>
+            <p><%= treinamentos %> </p>
+          </div><!-- wrapper -->
+        </div><!-- metrica -->
+        <div class="clear"></div><!-- clear -->
+      </div><!-- box-content w100 -->
+
+      <div class="box-content w50 left">
+        <h2>Seus Treinamentos</h2>
+
+        <table>
+          <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td>Aulas</td>
+            <td>Módulos</td>
+          </tr>
+        <% for (let i = 0; i < _cursos.length; i++) { %>
+          <tr>
+            <td>#<%= i+1 %></td>
+            <td><%= _cursos[i]._curso.titulo %> </td>
+            <td><%= _cursos[i]._total %> </td>
+            <td><%= _cursos[i]._modulos %> </td>
+          </tr>
+        <% } %>
+        </table>
+      </div>
+
+      <div class="box-content w50 right">
+        <h2>Últimas Aulas</h2>
+        <table>
+          <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td>Módulo</td>
+            <td>Treinamento</td>
+          </tr>
+          <% for (let i = 0; i < _aulas.length; i++) { %>
+          <tr>
+            <td>#<%= i+1 %></td>
+            <td><%= _aulas[i]._aula.nome %></td>
+            <td><%= _aulas[i]._modulo %></td>
+            <td><%= _aulas[i]._treinamento %></td>
+          </tr> 
+          <% } %>
+        </table>
+      </div>
+    </div><!-- content -->
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../../public/scripts/scripts.js"></script>
+</body>
+</html>

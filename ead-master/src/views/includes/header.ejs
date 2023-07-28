@@ -1,0 +1,52 @@
+<header>
+  <div class="container">
+    <div class="logo left">
+      <h2>Tomorrow Treinamentos</h2>
+    </div><!-- logo -->
+    <div class="menu right">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/loja">Loja</a></li>
+        <li><a href="/contato">Contato</a></li>
+        <% if (login != undefined) { // Usuário está logado %>
+        <li><span class="name"><%= login.nome %></span><div class="showmenu"><i id="menu-button" class="fas fa-angle-down"></i></div>
+          <div class="sub-menu">
+            <ul>
+              <a href="/biblioteca">Minha Biblioteca</a>
+              <a href="/certificados">Meus Certificados</a>
+              <a href="/conta">Minha Conta</a>
+              <a href="/sair">Encerrar Sessão</a>
+            </ul>
+          </div><!-- sub-menu -->
+        </li>
+        <% } else { %>
+        <li><div class="button1"><a href="/login">Entrar</a></div></li>
+        <li><div class="button2"><a href="/register">Criar Conta</a></div></li>
+        <% } %>
+      </ul>
+    </div><!-- menu -->
+    <div class="mobile right">
+      <i id="show-mobile" class="fas fa-bars"></i>
+      <ul id="mobile-ul">
+        <li><a href="/">Home</a></li>
+        <li><a href="/loja">Loja</a></li>
+        <!-- <li><a href="/certificados">Certificados</a></li> -->
+        <li><a href="/contato">Contato</a></li>
+        <% if (login != undefined) { // Usuário está logado %>
+        <li><a href="/biblioteca">Minha Biblioteca</a></li>
+        <li><a href="/certificados">Meus Certificados</a></li>
+        <li><a href="/conta">Minha Conta</a></li>
+        <li><a href="/sair">Encerrar Sessão</a></li>
+        <% } else { %>
+        <li><a href="/login">Entrar</a></li>
+        <li><a href="/register">Criar Conta</a></li>
+        <% } %>
+      </ul>
+    </div><!-- mobile -->
+  </div><!-- container -->
+  <div class="clear"></div><!-- clear -->
+</header>
+<script src="https://kit.fontawesome.com/c84e9a4092.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha512-0XDfGxFliYJPFrideYOoxdgNIvrwGTLnmK20xZbCAvPfLGQMzHUsaqZK8ZoH+luXGRxTrS46+Aq400nCnAT0/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../../public/scripts/scripts.js"></script>
